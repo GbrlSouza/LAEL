@@ -1,10 +1,14 @@
-`Resumo:` **LAEL - A Fusion of Python and Vue.js**
+# **LAEL** - A Fusion of Python and Vue.js
+
+---
+
+`Resumo:`
 
 **LAEL** é uma linguagem de programação que combina a simplicidade e expressividade de **Python** com a reatividade e modularidade de **Vue.js**. Ela é projetada para desenvolvimento full-stack, permitindo a criação de componentes reativos para interfaces web, junto com a lógica de back-end fluente. LAEL busca proporcionar uma sintaxe acessível, combinando controle de fluxo e tipagem dinâmica, e oferecendo bindings reativos para criar interfaces dinâmicas de maneira simples.
 
 ---
 
-`Descrição Completa:` **LAEL** - A Fusion of Python and Vue.js
+`Descrição Completa:`
 
 **LAEL** é uma linguagem de programação inovadora que une o melhor de dois mundos: a simplicidade da sintaxe Python e o poder reativo de Vue.js. Criada para desenvolvedores full-stack, LAEL permite a construção de componentes modulares, reativos e fáceis de manter, com uma curva de aprendizado suave, especialmente para aqueles já familiarizados com Python ou Vue.js.
 
