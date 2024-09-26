@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAEL - A Nova Linguagem de Programação</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+    <!-- Vue.js App -->
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <nav>
+                <div class="logo">LAEL</div>
+                <ul>
+                    <li><a href="#features">Recursos</a></li>
+                    <li><a href="#code">Exemplo de Código</a></li>
+                    <li><a href="#benefits">Benefícios</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#community">Comunidade</a></li>
+                </ul>
+                <a href="#start" class="cta">Comece Agora</a>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>LAEL: A Nova Linguagem de Programação que Une Simplicidade e Reatividade</h1>
+                <p>A fusão perfeita entre Python e Vue.js para o desenvolvimento de aplicações web modernas.</p>
+                <div class="hero-cta">
+                    <a href="#try" class="btn">Testar no Navegador</a>
+                    <a href="#docs" class="btn">Documentação</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2>Por que Escolher LAEL?</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3>Sintaxe Simples</h3>
+                    <p>Inspirada no Python, com uma estrutura limpa e intuitiva.</p>
+                </div>
+                <div class="feature">
+                    <h3>Reatividade Dinâmica</h3>
+                    <p>A UI é atualizada automaticamente com mudanças de estado.</p>
+                </div>
+                <div class="feature">
+                    <h3>Componentes Modulares</h3>
+                    <p>Crie e reutilize componentes de maneira eficiente.</p>
+                </div>
+                <div class="feature">
+                    <h3>Tipagem Flexível</h3>
+                    <p>Tipagem dinâmica com suporte a anotações de tipos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Example Section -->
+        <section id="code" class="code-example">
+            <h2>Veja LAEL em Ação</h2>
+            <pre>{{ codeExample }}</pre>
+            <button @click="runCode">Tente você mesmo</button>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="benefits">
+            <h2>O que Você Ganha com LAEL?</h2>
+            <ul>
+                <li>Produtividade Elevada com menos código boilerplate.</li>
+                <li>Integração Full-stack, tanto para UI quanto para lógica back-end.</li>
+                <li>Fácil de Aprender, especialmente para quem já conhece Python ou Vue.js.</li>
+                <li>Open-source, em constante evolução com o apoio da comunidade.</li>
+            </ul>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item" v-for="item in faqs" :key="item.question">
+                <h3>{{ item.question }}</h3>
+                <p>{{ item.answer }}</p>
+            </div>
+        </section>
+
+        <!-- Community Section -->
+        <section id="community" class="community">
+            <h2>Junte-se à Comunidade LAEL</h2>
+            <p>Contribua com o projeto, reportando bugs ou sugerindo melhorias no GitHub. Interaja com outros desenvolvedores em nosso Discord e Twitter.</p>
+            <div class="community-links">
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://discord.com" target="_blank">Discord</a>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 LAEL. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
