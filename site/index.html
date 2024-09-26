@@ -1,110 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAEL - A Nova Linguagem de Programação</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>LAEL - The Fusion of Python and Vue.js</title>
+
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Vuetify CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Vue.js App -->
-    <div id="app">
-        <!-- Header -->
-        <header>
-            <nav>
-                <div class="logo">LAEL</div>
-                <ul>
-                    <li><a href="#features">Recursos</a></li>
-                    <li><a href="#code">Exemplo de Código</a></li>
-                    <li><a href="#benefits">Benefícios</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#community">Comunidade</a></li>
-                </ul>
-                <a href="#start" class="cta">Comece Agora</a>
-            </nav>
-        </header>
+  <div id="app">
+    <v-app>
+      <!-- Header -->
+      <v-app-bar app color="black" dark>
+        <v-toolbar-title>LAEL</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn text @click="scrollToSection('features')">Recursos</v-btn>
+        <v-btn text @click="scrollToSection('code')">Exemplo de Código</v-btn>
+        <v-btn text @click="scrollToSection('faq')">FAQ</v-btn>
+        <v-btn text @click="scrollToSection('community')">Comunidade</v-btn>
+        <v-btn text color="green" class="ml-4">Comece Agora</v-btn>
+      </v-app-bar>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>LAEL: A Nova Linguagem de Programação que Une Simplicidade e Reatividade</h1>
-                <p>A fusão perfeita entre Python e Vue.js para o desenvolvimento de aplicações web modernas.</p>
-                <div class="hero-cta">
-                    <a href="#try" class="btn">Testar no Navegador</a>
-                    <a href="#docs" class="btn">Documentação</a>
-                </div>
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <v-parallax src="https://via.placeholder.com/1920x600/000000/ffffff?text=LAEL+-+Simplicidade+e+Reatividade" height="600">
+        <div class="hero-content text-center">
+          <h1 class="display-1 font-weight-bold white--text">LAEL</h1>
+          <h3 class="white--text">A fusão perfeita entre Python e Vue.js</h3>
+          <v-btn color="green" large class="mt-5" @click="scrollToSection('features')">Descubra Mais</v-btn>
+        </div>
+      </v-parallax>
 
-        <!-- Features Section -->
-        <section id="features" class="features">
-            <h2>Por que Escolher LAEL?</h2>
-            <div class="feature-list">
-                <div class="feature">
-                    <h3>Sintaxe Simples</h3>
-                    <p>Inspirada no Python, com uma estrutura limpa e intuitiva.</p>
-                </div>
-                <div class="feature">
-                    <h3>Reatividade Dinâmica</h3>
-                    <p>A UI é atualizada automaticamente com mudanças de estado.</p>
-                </div>
-                <div class="feature">
-                    <h3>Componentes Modulares</h3>
-                    <p>Crie e reutilize componentes de maneira eficiente.</p>
-                </div>
-                <div class="feature">
-                    <h3>Tipagem Flexível</h3>
-                    <p>Tipagem dinâmica com suporte a anotações de tipos.</p>
-                </div>
-            </div>
-        </section>
+      <!-- Features Section -->
+      <v-container id="features" class="section" fluid>
+        <v-row>
+          <v-col class="text-center" cols="12">
+            <h2 class="section-title">Por que Escolher LAEL?</h2>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col v-for="feature in features" :key="feature.title" cols="12" md="4" class="text-center">
+            <v-icon color="green" large>{{ feature.icon }}</v-icon>
+            <h3>{{ feature.title }}</h3>
+            <p>{{ feature.description }}</p>
+          </v-col>
+        </v-row>
+      </v-container>
 
-        <!-- Code Example Section -->
-        <section id="code" class="code-example">
-            <h2>Veja LAEL em Ação</h2>
-            <pre>{{ codeExample }}</pre>
-            <button @click="runCode">Tente você mesmo</button>
-        </section>
+      <!-- Code Example Section -->
+      <v-container id="code" class="section" fluid>
+        <v-row>
+          <v-col class="text-center" cols="12">
+            <h2 class="section-title">Veja LAEL em Ação</h2>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <v-col cols="12" md="8">
+            <v-card class="pa-5">
+              <v-card-title class="font-weight-bold">Exemplo de Código</v-card-title>
+              <v-card-text>
+                <pre><code class="language-javascript">
+component CounterApp:
+    props:
+        start_value: int = 0
 
-        <!-- Benefits Section -->
-        <section id="benefits" class="benefits">
-            <h2>O que Você Ganha com LAEL?</h2>
-            <ul>
-                <li>Produtividade Elevada com menos código boilerplate.</li>
-                <li>Integração Full-stack, tanto para UI quanto para lógica back-end.</li>
-                <li>Fácil de Aprender, especialmente para quem já conhece Python ou Vue.js.</li>
-                <li>Open-source, em constante evolução com o apoio da comunidade.</li>
-            </ul>
-        </section>
+    data:
+        count: int = start_value
 
-        <!-- FAQ Section -->
-        <section id="faq" class="faq">
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq-item" v-for="item in faqs" :key="item.question">
-                <h3>{{ item.question }}</h3>
-                <p>{{ item.answer }}</p>
-            </div>
-        </section>
+    methods:
+        def increment(self):
+            self.count += 1
 
-        <!-- Community Section -->
-        <section id="community" class="community">
-            <h2>Junte-se à Comunidade LAEL</h2>
-            <p>Contribua com o projeto, reportando bugs ou sugerindo melhorias no GitHub. Interaja com outros desenvolvedores em nosso Discord e Twitter.</p>
-            <div class="community-links">
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="https://discord.com" target="_blank">Discord</a>
-                <a href="https://twitter.com" target="_blank">Twitter</a>
-            </div>
-        </section>
+    template:
+        """
+        &lt;div&gt;
+            &lt;p&gt;Count: {{ count }}&lt;/p&gt;
+            &lt;button @click="increment"&gt;Increment&lt;/button&gt;
+        &lt;/div&gt;
+        """
+                </code></pre>
+              </v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 LAEL. Todos os direitos reservados.</p>
-        </footer>
-    </div>
+      <!-- FAQ Section -->
+      <v-container id="faq" class="section" fluid>
+        <v-row>
+          <v-col class="text-center" cols="12">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col v-for="faq in faqs" :key="faq.question" cols="12" md="6">
+            <v-card>
+              <v-card-title>{{ faq.question }}</v-card-title>
+              <v-card-text>{{ faq.answer }}</v-card-text>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
 
-    <script src="app.js"></script>
+      <!-- Community Section -->
+      <v-container id="community" class="section" fluid>
+        <v-row>
+          <v-col class="text-center" cols="12">
+            <h2 class="section-title">Junte-se à Comunidade LAEL</h2>
+            <p>Participe do nosso <v-btn text href="#" color="green">Discord</v-btn> ou contribua no <v-btn text href="#" color="green">GitHub</v-btn></p>
+          </v-col>
+        </v-row>
+      </v-container>
+
+      <!-- Footer -->
+      <v-footer color="black" dark>
+        <v-col class="text-center white--text">
+          ©2024 LAEL - Open Source | Feito com Vue.js e Vuetify
+        </v-col>
+      </v-footer>
+    </v-app>
+  </div>
+
+  <!-- Vue.js -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+  <!-- Vuetify JS -->
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="main.js"></script>
 </body>
 </html>
